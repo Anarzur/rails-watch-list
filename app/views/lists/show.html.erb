@@ -1,0 +1,19 @@
+<div class="container">
+  <div>
+    <h1><%= @list.name %></h1>
+  </div>
+
+  <div>
+    <% @list.bookmarks.each do |bookmark| %>
+    <ul>
+    <li><%= bookmark.movie.title %></li>
+    <p><%= bookmark.comment %></p>
+    <%= link_to bookmark_path(bookmark), data: { turbo_method: :delete, turbo_confirm: 'Delete?' } do %><i class="fa-regular fa-circle-xmark"></i><% end %>
+    </ul>
+    <% end %>
+  </div>
+
+  <div>
+     <%= render template: 'bookmarks/new' %>
+  </div>
+</div>

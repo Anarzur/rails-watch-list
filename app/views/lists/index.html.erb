@@ -1,0 +1,18 @@
+
+<div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://i2.pickpik.com/photos/555/568/1014/film-camera-photographing-developing-preview.jpg)">
+  <h1>Save any kind of movies</h1>
+  <h2>Classic</h2>
+</div>
+
+<div class="container">
+  <div>
+    <h2>My Lists</h2>
+    <% @lists.each do |list| %>
+    <h2><%= link_to list.name, list_path(list) %></h2>
+    <% end %>
+  </div>
+
+  <div>
+    <%= render template: 'lists/new' %>
+  </div>
+</div>
